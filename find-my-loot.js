@@ -1,127 +1,211 @@
 // ─── DATA ───────────────────────────────────────────────────────────────────
-// Each item: [name_en, name_fr, sources_string]
+// Each item: [name_en, name_fr, type, sources_string]
 // sources_string: comma-separated boss keys
 const SECTIONS = [
   {
     id: 'mythic',
-    label: 'Mythiques',
+    label: 'Mythic Items',
     theme: 'theme-mythic',
     isMythic: true,
     collapsible: true,
     items: [
-      ["Andariel's Visage", "Visage d'Andariel", 'duriel,andariel,harbinger'],
-      ['Harlequin Crest', "Cimier d'Arlequin", 'duriel,andariel,harbinger'],
+      [
+        "Andariel's Visage",
+        "Visage d'Andariel",
+        'Helmet',
+        'duriel,andariel,harbinger',
+      ],
+      [
+        'Harlequin Crest',
+        "Cimier d'Arlequin",
+        'Helmet',
+        'duriel,andariel,harbinger',
+      ],
       [
         'Melted Heart of Selig',
         'Cœur fondu de Selig',
+        'Amulet',
         'duriel,andariel,harbinger',
       ],
       [
         'Ring of Starless Skies',
         'Anneau des cieux sans étoiles',
+        'Ring',
         'duriel,andariel,harbinger',
       ],
       [
         'Shroud of False Death',
         'Linceul de la fausse mort',
+        'Chest',
         'duriel,andariel,harbinger',
       ],
       [
         'Heir of Perdition',
         'Héritier de la perdition',
+        'Chest',
         'duriel,andariel,harbinger',
       ],
-      ["Tyrael's Might", 'Puissance de Tyrael', 'duriel,andariel,harbinger'],
-      ['Doombringer', 'Porteur du Destin', 'duriel,andariel,harbinger'],
-      ['The Grandfather', 'Le Patriarche', 'duriel,andariel,harbinger'],
-      ['Shattered Vow', 'Vœu brisé', 'duriel,andariel,harbinger'],
+      [
+        "Tyrael's Might",
+        'Puissance de Tyrael',
+        'Chest',
+        'duriel,andariel,harbinger',
+      ],
+      [
+        'Doombringer',
+        'Porteur du Destin',
+        'Weapon',
+        'duriel,andariel,harbinger',
+      ],
+      [
+        'The Grandfather',
+        'Le Patriarche',
+        'Weapon',
+        'duriel,andariel,harbinger',
+      ],
+      ['Shattered Vow', 'Vœu brisé', 'Ring', 'duriel,andariel,harbinger'],
       [
         'Ahavarion, Spear of Lycander',
         'Ahavarion, Lance de Lycander',
+        'Weapon',
         'duriel,andariel,harbinger',
       ],
-      ['Bane of Ahjad-Den', "Fléau d'Ahjad-Den", 'duriel,andariel,harbinger'],
+      [
+        'Bane of Ahjad-Den',
+        "Fléau d'Ahjad-Den",
+        'Weapon',
+        'duriel,andariel,harbinger',
+      ],
     ],
   },
   {
     id: 'all',
-    label: 'Toutes classes',
+    label: 'All Classes',
     theme: 'theme-all',
     collapsible: true,
     items: [
-      ['Frostburn', 'Brûlure givrée', 'varshan,urivar'],
-      ["Mother's Embrace", 'Étreinte de la Mère', 'varshan'],
-      ["Rakanoth's Wake", 'Sillage de Rakanoth', 'varshan'],
-      ['Shard of Verathiel', 'Éclat de Verathiel', 'varshan'],
-      ['Craze of the Dead God', 'Frénésie du dieu mort', 'varshan,urivar'],
-      ['Ring of Writhing Moon', 'Anneau de la lune torturée', 'varshan'],
-      ['Orsivane', 'Orsivane', 'varshan'],
-      ['Arcadia', 'Arcadie', 'varshan,urivar'],
-      ['Ward of the White Dove', 'Garde de la colombe blanche', 'varshan'],
-      ['Dawnfire', "Feu de l'Aube", 'varshan'],
-      ['Sunbrand', 'Marque solaire', 'varshan'],
-      ["Balazan's Maxtlatl", 'Maxtlatl de Balazan', 'varshan,urivar'],
-      ['Razorplate', 'Plaque tranchante', 'lordzir'],
-      ['Temerity', 'Témérité', 'lordzir,urivar'],
-      ["Yen's Blessing", 'Bénédiction de Yen', 'lordzir'],
-      ['Sidhe Bindings', 'Liens des Sidhe', 'lordzir,urivar'],
-      ['Vox Omnium', 'Vox Omnium', 'lordzir'],
-      ['Jacinth Shell', 'Coquille de jacinthe', 'lordzir,urivar'],
-      ['Wushe Nak Pa', 'Wushe Nak Pa', 'lordzir'],
-      ['Band of First Breath', 'Anneau du premier souffle', 'lordzir'],
-      ['Path of the Emissary', "Chemin de l'Émissaire", 'lordzir'],
-      ["Cathedral's Song", 'Chant de la cathédrale', 'lordzir,urivar'],
-      ['Red Sermon', 'Sermon rouge', 'lordzir'],
-      ['Sanctis of Kethamar', 'Sanctis de Kethamar', 'lordzir'],
-      ["Kessime's Legacy", 'Héritage de Kessime', 'lordzir'],
-      ['Tassets of the Dawning Sky', 'Tassettes du ciel naissant', 'beast'],
-      ["Paingorger's Gauntlets", "Gantelets de l'Écorcheur", 'beast,urivar'],
-      ['Fists of Fate', 'Poings du Destin', 'beast'],
-      ['Wound Drinker', 'Buveur de blessures', 'beast'],
-      ['Harmony of Ebewaka', "Harmonie d'Ebewaka", 'beast'],
-      ['Ring of the Midday Hunt', 'Anneau de la chasse de midi', 'beast'],
-      ['Scorn of the Earth', 'Mépris de la Terre', 'beast'],
-      ["The Butcher's Cleaver", 'Couperet du Boucher', 'grigoire'],
-      ['Penitent Greaves', 'Grèves du Pénitent', 'grigoire'],
-      ['Endurant Faith', 'Foi endurante', 'grigoire'],
-      ['Hesha e Kesungi', 'Hesha e Kesungi', 'grigoire,urivar'],
-      ['Mantle of the Grey', 'Manteau du Gris', 'grigoire,urivar'],
-      ['Sundered Night', 'Nuit déchirée', 'grigoire'],
-      ['Supplication', 'Supplication', 'grigoire'],
+      ['Frostburn', 'Brûlure givrée', 'Boots', 'varshan,urivar'],
+      ["Mother's Embrace", 'Étreinte de la Mère', 'Amulet', 'varshan'],
+      ["Rakanoth's Wake", 'Sillage de Rakanoth', 'Helmet', 'varshan'],
+      ['Shard of Verathiel', 'Éclat de Verathiel', 'Amulet', 'varshan'],
+      [
+        'Craze of the Dead God',
+        'Frénésie du dieu mort',
+        'Amulet',
+        'varshan,urivar',
+      ],
+      [
+        'Ring of Writhing Moon',
+        'Anneau de la lune torturée',
+        'Ring',
+        'varshan',
+      ],
+      ['Orsivane', 'Orsivane', 'Weapon', 'varshan'],
+      ['Arcadia', 'Arcadie', 'Helmet', 'varshan,urivar'],
+      [
+        'Ward of the White Dove',
+        'Garde de la colombe blanche',
+        'Amulet',
+        'varshan',
+      ],
+      ['Dawnfire', "Feu de l'Aube", 'Weapon', 'varshan'],
+      ['Sunbrand', 'Marque solaire', 'Weapon', 'varshan'],
+      ["Balazan's Maxtlatl", 'Maxtlatl de Balazan', 'Weapon', 'varshan,urivar'],
+      ['Razorplate', 'Chest', 'Chest', 'lordzir'],
+      ['Temerity', 'Témérité', 'Chest', 'lordzir,urivar'],
+      ["Yen's Blessing", 'Bénédiction de Yen', 'Amulet', 'lordzir'],
+      ['Sidhe Bindings', 'Liens des Sidhe', 'Gloves', 'lordzir,urivar'],
+      ['Vox Omnium', 'Vox Omnium', 'Weapon', 'lordzir'],
+      ['Jacinth Shell', 'Coquille de jacinthe', 'Amulet', 'lordzir,urivar'],
+      ['Wushe Nak Pa', 'Wushe Nak Pa', 'Helmet', 'lordzir'],
+      ['Band of First Breath', 'Anneau du premier souffle', 'Ring', 'lordzir'],
+      ['Path of the Emissary', "Chemin de l'Émissaire", 'Amulet', 'lordzir'],
+      [
+        "Cathedral's Song",
+        'Chant de la cathédrale',
+        'Weapon',
+        'lordzir,urivar',
+      ],
+      ['Red Sermon', 'Sermon rouge', 'Amulet', 'lordzir'],
+      ['Sanctis of Kethamar', 'Sanctis de Kethamar', 'Helmet', 'lordzir'],
+      ["Kessime's Legacy", 'Héritage de Kessime', 'Ring', 'lordzir'],
+      [
+        'Tassets of the Dawning Sky',
+        'Tassettes du ciel naissant',
+        'Boots',
+        'beast',
+      ],
+      [
+        "Paingorger's Gauntlets",
+        "Gantelets de l'Écorcheur",
+        'Gloves',
+        'beast,urivar',
+      ],
+      ['Fists of Fate', 'Poings du Destin', 'Gloves', 'beast'],
+      ['Wound Drinker', 'Buveur de blessures', 'Weapon', 'beast'],
+      ['Harmony of Ebewaka', "Harmonie d'Ebewaka", 'Amulet', 'beast'],
+      [
+        'Ring of the Midday Hunt',
+        'Anneau de la chasse de midi',
+        'Ring',
+        'beast',
+      ],
+      ['Scorn of the Earth', 'Mépris de la Terre', 'Weapon', 'beast'],
+      ["The Butcher's Cleaver", 'Couperet du Boucher', 'Weapon', 'grigoire'],
+      ['Penitent Greaves', 'Grèves du Pénitent', 'Boots', 'grigoire'],
+      ['Endurant Faith', 'Foi endurante', 'Amulet', 'grigoire'],
+      ['Hesha e Kesungi', 'Hesha e Kesungi', 'Helmet', 'grigoire,urivar'],
+      ['Mantle of the Grey', 'Manteau du Gris', 'Chest', 'grigoire,urivar'],
+      ['Sundered Night', 'Nuit déchirée', 'Boots', 'grigoire'],
+      ['Supplication', 'Supplication', 'Amulet', 'grigoire'],
       [
         'Bands of Ichorous Rose',
         'Gantelets de la Rose Ichoreuse',
+        'Gloves',
         'grigoire,urivar',
       ],
-      ["Peacemonger's Signet", 'Sceau du Pacificateur', 'grigoire'],
+      ["Peacemonger's Signet", 'Sceau du Pacificateur', 'Ring', 'grigoire'],
       [
         'Ring of the Midnight Sun',
         'Anneau du soleil de minuit',
+        'Ring',
         'grigoire,urivar',
       ],
-      ["Loyalty's Mantle", 'Manteau de la Loyauté', 'grigoire'],
+      ["Loyalty's Mantle", 'Manteau de la Loyauté', 'Chest', 'grigoire'],
       [
         'Godslayer Crown',
         'Couronne du Tueur de Dieux',
+        'Helmet',
         'lordzir,duriel,andariel',
       ],
-      ['Flickerstep', 'Pas vacillant', 'andariel,harbinger'],
-      ["Tibault's Will", 'Volonté de Tibault', 'andariel,harbinger'],
-      ["Locran's Talisman", 'Talisman de Locran', 'andariel,harbinger'],
-      ['Soulbrand', "Marque de l'âme", 'andariel,duriel'],
-      ["X'Fal's Corroded Signet", "Sceau corrodé de X'Fal", 'andariel,duriel'],
-      ['Azurewrath', 'Azurewrath', 'andariel,duriel'],
+      ['Flickerstep', 'Pas vacillant', 'Boots', 'andariel,harbinger'],
+      ["Tibault's Will", 'Volonté de Tibault', 'Weapon', 'andariel,harbinger'],
+      [
+        "Locran's Talisman",
+        'Talisman de Locran',
+        'Amulet',
+        'andariel,harbinger',
+      ],
+      ['Soulbrand', "Marque de l'âme", 'Weapon', 'andariel,duriel'],
+      [
+        "X'Fal's Corroded Signet",
+        "Sceau corrodé de X'Fal",
+        'Ring',
+        'andariel,duriel',
+      ],
+      ['Azurewrath', 'Azurewrath', 'Weapon', 'andariel,duriel'],
       [
         "Banished Lord's Talisman",
         'Talisman du Seigneur banni',
+        'Amulet',
         'duriel,harbinger',
       ],
-      ['Crown of Lucion', 'Couronne de Lucion', 'duriel,harbinger'],
-      ['Blood-Mad Idol', 'Idole folle de sang', 'butcher'],
-      ['Wendigo Brand', 'Marque du Wendigo', 'butcher'],
-      ['Rustbitten Dirk', 'Dague rouillée', 'butcher'],
-      ['Thousand-Eye Reaver', 'Pilleur aux mille yeux', 'butcher'],
-      ['Wyrdskin', 'Wyrdskin', 'butcher'],
+      ['Crown of Lucion', 'Couronne de Lucion', 'Helmet', 'duriel,harbinger'],
+      ['Blood-Mad Idol', 'Idole folle de sang', 'Amulet', 'butcher'],
+      ['Wendigo Brand', 'Marque du Wendigo', 'Weapon', 'butcher'],
+      ['Rustbitten Dirk', 'Dague rouillée', 'Weapon', 'butcher'],
+      ['Thousand-Eye Reaver', 'Pilleur aux mille yeux', 'Weapon', 'butcher'],
+      ['Wyrdskin', 'Wyrdskin', 'Chest', 'butcher'],
     ],
   },
   {
@@ -130,27 +214,38 @@ const SECTIONS = [
     theme: 'theme-barb',
     collapsible: true,
     items: [
-      ['Rage of Harrogath', 'Rage de Harrogath', 'grigoire'],
-      ['Battle Trance', 'Transe de combat', 'grigoire'],
-      ['Twin Strikes', 'Coups jumelés', 'grigoire,urivar'],
-      ['Unbroken Chain', 'Chaîne indestructible', 'grigoire'],
-      ['Insatiable Fury', 'Fureur insatiable', 'grigoire'],
-      ['Fields of Crimson', "Champs d'Écarlate", 'varshan'],
-      ['100,000 Steps', '100 000 pas', 'varshan,urivar'],
-      ["Gohr's Devastating Grips", 'Prises dévastatrices de Gohr', 'varshan'],
-      ['Ring of Red Furor', 'Anneau de la fureur rouge', 'varshan'],
-      ['Sabre of Tsasgal', 'Sabre de Tsasgal', 'varshan'],
-      ["Ramaladni's Magnum Opus", 'Magnum Opus de Ramaladni', 'lordzir'],
-      ['Overkill', 'Excès de force', 'lordzir,urivar'],
-      ["Arreat's Bearing", "Port d'Arreat", 'lordzir'],
-      ['Ugly Bastard Helm', 'Casque du Sale Bâtard', 'lordzir'],
-      ['Chainscourged Mail', 'Cotte de mailles tourmentée', 'lordzir'],
-      ["Ancients' Oath", 'Serment des Anciens', 'beast'],
-      ['Hellhammer', 'Marteau infernal', 'beast'],
-      ['Ring of the Ravenous', 'Anneau du Vorace', 'beast,urivar'],
+      ['Rage of Harrogath', 'Rage de Harrogath', 'Weapon', 'grigoire'],
+      ['Battle Trance', 'Transe de combat', 'Boots', 'grigoire'],
+      ['Twin Strikes', 'Coups jumelés', 'Weapon', 'grigoire,urivar'],
+      ['Unbroken Chain', 'Chaîne indestructible', 'Boots', 'grigoire'],
+      ['Insatiable Fury', 'Fureur insatiable', 'Gloves', 'grigoire'],
+      ['Fields of Crimson', "Champs d'Écarlate", 'Boots', 'varshan'],
+      ['100,000 Steps', '100 000 pas', 'Boots', 'varshan,urivar'],
+      [
+        "Gohr's Devastating Grips",
+        'Prises dévastatrices de Gohr',
+        'Gloves',
+        'varshan',
+      ],
+      ['Ring of Red Furor', 'Anneau de la fureur rouge', 'Ring', 'varshan'],
+      ['Sabre of Tsasgal', 'Sabre de Tsasgal', 'Weapon', 'varshan'],
+      [
+        "Ramaladni's Magnum Opus",
+        'Magnum Opus de Ramaladni',
+        'Weapon',
+        'lordzir',
+      ],
+      ['Overkill', 'Excès de force', 'Weapon', 'lordzir,urivar'],
+      ["Arreat's Bearing", "Port d'Arreat", 'Boots', 'lordzir'],
+      ['Ugly Bastard Helm', 'Casque du Sale Bâtard', 'Helmet', 'lordzir'],
+      ['Chainscourged Mail', 'Cotte de mailles tourmentée', 'Chest', 'lordzir'],
+      ["Ancients' Oath", 'Serment des Anciens', 'Amulet', 'beast'],
+      ['Hellhammer', 'Marteau infernal', 'Weapon', 'beast'],
+      ['Ring of the Ravenous', 'Anneau du Vorace', 'Ring', 'beast,urivar'],
       [
         'Tuskhelm of Joritz the Mighty',
         'Casque à défenses de Joritz',
+        'Helmet',
         'duriel,andariel',
       ],
     ],
@@ -161,33 +256,70 @@ const SECTIONS = [
     theme: 'theme-druid',
     collapsible: true,
     items: [
-      ["Hunter's Zenith", 'Zénith du Chasseur', 'grigoire'],
-      ['Waxing Gibbous', 'Gibbeuse croissante', 'grigoire'],
-      ['Earthbreaker', 'Briseur de Terre', 'grigoire,urivar'],
-      ['Khamsin Steppewalkers', 'Marcheurs des steppes Khamsin', 'grigoire'],
-      ["Mad Wolf's Glee", 'Joie du loup fou', 'varshan'],
-      ["Vasily's Prayer", 'Prière de Vasily', 'varshan'],
+      ["Hunter's Zenith", 'Zénith du Chasseur', 'Amulet', 'grigoire'],
+      ['Waxing Gibbous', 'Gibbeuse croissante', 'Weapon', 'grigoire'],
+      ['Earthbreaker', 'Briseur de Terre', 'Weapon', 'grigoire,urivar'],
+      [
+        'Khamsin Steppewalkers',
+        'Marcheurs des steppes Khamsin',
+        'Boots',
+        'grigoire',
+      ],
+      ["Mad Wolf's Glee", 'Joie du loup fou', 'Gloves', 'varshan'],
+      ["Vasily's Prayer", 'Prière de Vasily', 'Helmet', 'varshan'],
       [
         'Greatstaff of the Crone',
         'Grand bâton de la Vieille',
+        'Weapon',
         'varshan,urivar',
       ],
-      ["Airidah's Inexorable Will", "Volonté inexorable d'Airidah", 'varshan'],
-      ['Fleshrender', 'Déchireur de chair', 'lordzir'],
-      ['Wildheart Hunger', 'Faim du Cœur sauvage', 'lordzir'],
-      ['Mjölnic Ryng', 'Anneau de Mjölnic', 'lordzir'],
-      ["Mantle of Mountain's Fury", 'Manteau de la Fureur des monts', 'beast'],
+      [
+        "Airidah's Inexorable Will",
+        "Volonté inexorable d'Airidah",
+        'Weapon',
+        'varshan',
+      ],
+      ['Fleshrender', 'Déchireur de chair', 'Weapon', 'lordzir'],
+      ['Wildheart Hunger', 'Faim du Cœur sauvage', 'Ring', 'lordzir'],
+      ['Mjölnic Ryng', 'Anneau de Mjölnic', 'Ring', 'lordzir'],
+      [
+        "Mantle of Mountain's Fury",
+        'Manteau de la Fureur des monts',
+        'Chest',
+        'beast',
+      ],
       [
         'Hooves of the Mountain God',
         'Sabots du Dieu des montagnes',
+        'Boots',
         'beast,urivar',
       ],
-      ["Storm's Companion", 'Compagnon de la Tempête', 'beast,urivar'],
-      ["Unsung Ascetic's Wraps", "Bandelettes de l'Ascète oublié", 'beast'],
-      ['Stone of Vehemen', 'Pierre de Vehemen', 'beast'],
-      ["Gathlen's Birthright", 'Droit de naissance de Gathlen', 'beast,urivar'],
-      ['Tempest Roar', 'Rugissement de Tempête', 'duriel,andariel,harbinger'],
-      ['Dolmen Stone', 'Pierre de Dolmen', 'duriel,andariel'],
+      [
+        "Storm's Companion",
+        'Compagnon de la Tempête',
+        'Amulet',
+        'beast,urivar',
+      ],
+      [
+        "Unsung Ascetic's Wraps",
+        "Bandelettes de l'Ascète oublié",
+        'Chest',
+        'beast',
+      ],
+      ['Stone of Vehemen', 'Pierre de Vehemen', 'Amulet', 'beast'],
+      [
+        "Gathlen's Birthright",
+        'Droit de naissance de Gathlen',
+        'Weapon',
+        'beast,urivar',
+      ],
+      [
+        'Tempest Roar',
+        'Rugissement de Tempête',
+        'Weapon',
+        'duriel,andariel,harbinger',
+      ],
+      ['Dolmen Stone', 'Pierre de Dolmen', 'Amulet', 'duriel,andariel'],
     ],
   },
   {
@@ -196,42 +328,65 @@ const SECTIONS = [
     theme: 'theme-necro',
     collapsible: true,
     items: [
-      ['Howl from Below', 'Hurlement des profondeurs', 'grigoire'],
-      ['Greaves of the Empty Tomb', 'Grèves du tombeau vide', 'grigoire'],
-      ['Ebonpiercer', "Perceur d'ébène", 'grigoire,urivar'],
-      ["Path of Trag'Oul", "Chemin de Trag'Oul", 'grigoire'],
-      ['The Mortacrux', 'La Mortacrux', 'grigoire'],
+      ['Howl from Below', 'Hurlement des profondeurs', 'Weapon', 'grigoire'],
+      [
+        'Greaves of the Empty Tomb',
+        'Grèves du tombeau vide',
+        'Boots',
+        'grigoire',
+      ],
+      ['Ebonpiercer', "Perceur d'ébène", 'Weapon', 'grigoire,urivar'],
+      ["Path of Trag'Oul", "Chemin de Trag'Oul", 'Weapon', 'grigoire'],
+      ['The Mortacrux', 'La Mortacrux', 'Weapon', 'grigoire'],
       [
         'Rotting Lightbringer',
         'Porteur de lumière en décomposition',
+        'Weapon',
         'varshan,urivar',
       ],
-      ['Bloodless Scream', 'Cri sans sang', 'varshan,urivar'],
-      ['Deathless Visage', 'Visage sans mort', 'varshan'],
-      ["Deathspeaker's Pendant", 'Pendentif du Parleur de mort', 'varshan'],
-      ['Ring of the Sacrilegious Soul', "Anneau de l'âme sacrilège", 'varshan'],
-      ['Malefic Crescent', 'Croissant maléfique', 'lordzir,urivar'],
+      ['Bloodless Scream', 'Cri sans sang', 'Helmet', 'varshan,urivar'],
+      ['Deathless Visage', 'Visage sans mort', 'Helmet', 'varshan'],
+      [
+        "Deathspeaker's Pendant",
+        'Pendentif du Parleur de mort',
+        'Amulet',
+        'varshan',
+      ],
+      [
+        'Ring of the Sacrilegious Soul',
+        "Anneau de l'âme sacrilège",
+        'Ring',
+        'varshan',
+      ],
+      ['Malefic Crescent', 'Croissant maléfique', 'Ring', 'lordzir,urivar'],
       [
         "Blood Artisan's Cuirass",
         "Cuirasse de l'Artisan du sang",
+        'Chest',
         'lordzir,urivar',
       ],
-      ['Lidless Wall', 'Mur sans paupières', 'lordzir'],
-      ["Cruor's Embrace", 'Étreinte du Cruor', 'lordzir'],
-      ['Ring of Mendeln', 'Anneau de Mendeln', 'beast'],
-      ['Mutilator Plate', 'Plaque Mutilateur', 'beast'],
-      ["Indira's Memory", "Mémoire d'Indira", 'beast'],
-      ['The Unmaker', 'Le Défaiseur', 'beast,urivar'],
-      ['Gravebloom', 'Fleur de tombe', 'beast'],
-      ['Kilt of Blackwing', "Kilt de l'Aile noire", 'beast'],
-      ['Black River', 'Rivière noire', 'andariel,harbinger'],
+      ['Lidless Wall', 'Mur sans paupières', 'Helmet', 'lordzir'],
+      ["Cruor's Embrace", 'Étreinte du Cruor', 'Boots', 'lordzir'],
+      ['Ring of Mendeln', 'Anneau de Mendeln', 'Ring', 'beast'],
+      ['Mutilator Plate', 'Plaque Mutilateur', 'Chest', 'beast'],
+      ["Indira's Memory", "Mémoire d'Indira", 'Boots', 'beast'],
+      ['The Unmaker', 'Le Défaiseur', 'Weapon', 'beast,urivar'],
+      ['Gravebloom', 'Fleur de tombe', 'Amulet', 'beast'],
+      ['Kilt of Blackwing', "Kilt de l'Aile noire", 'Boots', 'beast'],
+      ['Black River', 'Rivière noire', 'Weapon', 'andariel,harbinger'],
       [
         'Blood Moon Breeches',
         'Culotte de la lune sanglante',
+        'Boots',
         'duriel,andariel',
       ],
-      ['Cowl of the Nameless', 'Capuche du Sans-nom', 'duriel,andariel'],
-      ["Death's Pavane", 'Pavane de la Mort', 'duriel,andariel'],
+      [
+        'Cowl of the Nameless',
+        'Capuche du Sans-nom',
+        'Helmet',
+        'duriel,andariel',
+      ],
+      ["Death's Pavane", 'Pavane de la Mort', 'Boots', 'duriel,andariel'],
     ],
   },
   {
@@ -240,26 +395,51 @@ const SECTIONS = [
     theme: 'theme-rogue',
     collapsible: true,
     items: [
-      ['Word of Hakan', 'Parole de Hakan', 'grigoire,urivar'],
-      ['Grasp of Shadow', 'Emprise des Ombres', 'grigoire'],
-      ["Saboteur's Signet", 'Sceau du Saboteur', 'grigoire'],
-      ['Shroud of Khanduras', 'Linceul de Khanduras', 'grigoire'],
-      ['Condemnation', 'Condamnation', 'varshan'],
-      ['Eyes in the Dark', 'Yeux dans les ténèbres', 'varshan,urivar'],
-      ['Skyhunter', 'Chasseur céleste', 'varshan'],
-      ['Writhing Band of Trickery', 'Anneau contorsionné de ruse', 'varshan'],
-      ['Gospel of the Devotee', 'Évangile du Dévoué', 'varshan,urivar'],
-      ['Sanguivor, Blade of Zir', 'Sanguivor, Lame de Zir', 'lordzir'],
-      ["Asheara's Khanjar", "Khanjar d'Asheara", 'lordzir'],
-      ["Scoundrel's Kiss", 'Baiser du Brigand', 'lordzir,urivar'],
-      ["Assassin's Stride", "Foulée de l'Assassin", 'lordzir'],
-      ["Pitfighter's Gull", 'Goéland du combattant de fosse', 'lordzir'],
-      ['Orphan Maker', "Faiseur d'orphelins", 'lordzir'],
-      ['Windforce', 'Force du vent', 'beast,urivar'],
-      ['Eaglehorn', "Corne d'Aigle", 'beast'],
-      ['Beastfall Boots', 'Bottes Chute-Bête', 'beast'],
-      ['The Umbracrux', "L'Umbracrux", 'andariel,harbinger'],
-      ["Scoundrel's Leathers", 'Cuirs du Brigand', 'andariel,duriel'],
+      ['Word of Hakan', 'Parole de Hakan', 'Weapon', 'grigoire,urivar'],
+      ['Grasp of Shadow', 'Emprise des Ombres', 'Gloves', 'grigoire'],
+      ["Saboteur's Signet", 'Sceau du Saboteur', 'Ring', 'grigoire'],
+      ['Shroud of Khanduras', 'Linceul de Khanduras', 'Chest', 'grigoire'],
+      ['Condemnation', 'Condamnation', 'Weapon', 'varshan'],
+      [
+        'Eyes in the Dark',
+        'Yeux dans les ténèbres',
+        'Amulet',
+        'varshan,urivar',
+      ],
+      ['Skyhunter', 'Chasseur céleste', 'Weapon', 'varshan'],
+      [
+        'Writhing Band of Trickery',
+        'Anneau contorsionné de ruse',
+        'Ring',
+        'varshan',
+      ],
+      [
+        'Gospel of the Devotee',
+        'Évangile du Dévoué',
+        'Amulet',
+        'varshan,urivar',
+      ],
+      [
+        'Sanguivor, Blade of Zir',
+        'Sanguivor, Lame de Zir',
+        'Weapon',
+        'lordzir',
+      ],
+      ["Asheara's Khanjar", "Khanjar d'Asheara", 'Weapon', 'lordzir'],
+      ["Scoundrel's Kiss", 'Baiser du Brigand', 'Boots', 'lordzir,urivar'],
+      ["Assassin's Stride", "Foulée de l'Assassin", 'Boots', 'lordzir'],
+      [
+        "Pitfighter's Gull",
+        'Goéland du combattant de fosse',
+        'Amulet',
+        'lordzir',
+      ],
+      ['Orphan Maker', "Faiseur d'orphelins", 'Weapon', 'lordzir'],
+      ['Windforce', 'Force du vent', 'Weapon', 'beast,urivar'],
+      ['Eaglehorn', "Corne d'Aigle", 'Weapon', 'beast'],
+      ['Beastfall Boots', 'Bottes Chute-Bête', 'Boots', 'beast'],
+      ['The Umbracrux', "L'Umbracrux", 'Amulet', 'andariel,harbinger'],
+      ["Scoundrel's Leathers", 'Cuirs du Brigand', 'Chest', 'andariel,duriel'],
     ],
   },
   {
@@ -268,31 +448,57 @@ const SECTIONS = [
     theme: 'theme-sorc',
     collapsible: true,
     items: [
-      ['Staff of Lam Esen', 'Bâton de Lam Esen', 'grigoire'],
-      ['Iceheart Brais', 'Braies Cœur-de-Glace', 'grigoire,urivar'],
-      ['Flameweaver', 'Tisseur de flammes', 'grigoire'],
-      ['Axial Conduit', 'Conduit axial', 'grigoire'],
-      ['Hail of Verglas', 'Grêle de Verglas', 'grigoire,urivar'],
-      ['Protection of the Prime', 'Protection du Primordial', 'grigoire'],
-      ['Staff of Endless Rage', 'Bâton de la Rage infinie', 'varshan'],
-      ["Esu's Heirloom", "Héritage d'Esu", 'varshan'],
-      ['Raiment of the Infinite', "Vêtement de l'Infini", 'varshan'],
+      ['Staff of Lam Esen', 'Bâton de Lam Esen', 'Weapon', 'grigoire'],
+      ['Iceheart Brais', 'Braies Cœur-de-Glace', 'Boots', 'grigoire,urivar'],
+      ['Flameweaver', 'Tisseur de flammes', 'Gloves', 'grigoire'],
+      ['Axial Conduit', 'Conduit axial', 'Amulet', 'grigoire'],
+      ['Hail of Verglas', 'Grêle de Verglas', 'Weapon', 'grigoire,urivar'],
+      [
+        'Protection of the Prime',
+        'Protection du Primordial',
+        'Chest',
+        'grigoire',
+      ],
+      [
+        'Staff of Endless Rage',
+        'Bâton de la Rage infinie',
+        'Weapon',
+        'varshan',
+      ],
+      ["Esu's Heirloom", "Héritage d'Esu", 'Helmet', 'varshan'],
+      ['Raiment of the Infinite', "Vêtement de l'Infini", 'Chest', 'varshan'],
       [
         "Tal Rasha's Iridescent Loop",
         'Anneau iridescent de Tal Rasha',
+        'Ring',
         'varshan,urivar',
       ],
-      ["Esadora's Overflowing Cameo", "Camée débordant d'Esadora", 'lordzir'],
-      ['Fractured Winterglass', "Verre d'hiver fracturé", 'lordzir'],
-      ["Okun's Catalyst", "Catalyseur d'Okun", 'lordzir'],
-      ['The Oculus', "L'Oculus", 'beast'],
-      ['Starfall Coronet', "Couronnement d'étoile filante", 'beast'],
-      ['Strike of Stormhorn', 'Frappe de Cor-tempête', 'beast,urivar'],
-      ['Gloves of the Illuminator', "Gants de l'Illuminateur", 'beast'],
-      ['Blue Rose', 'Rose bleue', 'duriel'],
-      ['Flamescar', 'Cicatrice de flamme', 'harbinger'],
-      ['Galvanic Azurite', 'Azurite galvanique', 'harbinger'],
-      ['Ophidian Iris', 'Iris ophidien', 'harbinger,duriel'],
+      [
+        "Esadora's Overflowing Cameo",
+        "Camée débordant d'Esadora",
+        'Amulet',
+        'lordzir',
+      ],
+      ['Fractured Winterglass', "Verre d'hiver fracturé", 'Weapon', 'lordzir'],
+      ["Okun's Catalyst", "Catalyseur d'Okun", 'Weapon', 'lordzir'],
+      ['The Oculus', "L'Oculus", 'Amulet', 'beast'],
+      ['Starfall Coronet', "Couronnement d'étoile filante", 'Helmet', 'beast'],
+      [
+        'Strike of Stormhorn',
+        'Frappe de Cor-tempête',
+        'Weapon',
+        'beast,urivar',
+      ],
+      [
+        'Gloves of the Illuminator',
+        "Gants de l'Illuminateur",
+        'Gloves',
+        'beast',
+      ],
+      ['Blue Rose', 'Rose bleue', 'Weapon', 'duriel'],
+      ['Flamescar', 'Cicatrice de flamme', 'Boots', 'harbinger'],
+      ['Galvanic Azurite', 'Azurite galvanique', 'Amulet', 'harbinger'],
+      ['Ophidian Iris', 'Iris ophidien', 'Amulet', 'harbinger,duriel'],
     ],
   },
   {
@@ -301,22 +507,44 @@ const SECTIONS = [
     theme: 'theme-spirit',
     collapsible: true,
     items: [
-      ['The Hand of Naz', 'La Main de Naz', 'duriel,andariel,harbinger'],
+      [
+        'The Hand of Naz',
+        'La Main de Naz',
+        'Weapon',
+        'duriel,andariel,harbinger',
+      ],
       [
         'Nesekem, The Herald',
         'Nesekem, Le Héraut',
+        'Amulet',
         'duriel,andariel,harbinger',
       ],
-      ['Rod of Kepeleke', 'Bâton de Kepeleke', 'duriel,andariel,harbinger'],
-      ['Sepazontec', 'Sepazontec', 'duriel'],
+      [
+        'Rod of Kepeleke',
+        'Bâton de Kepeleke',
+        'Weapon',
+        'duriel,andariel,harbinger',
+      ],
+      ['Sepazontec', 'Sepazontec', 'Helmet', 'duriel'],
       [
         'Deathmask of Nirmitruq',
         'Masque mortuaire de Nirmitruq',
+        'Helmet',
         'beast,urivar',
       ],
-      ["Sunbird's Gorget", "Gorgerin de l'Oiseau solaire", 'harbinger'],
-      ["Griswold's Opus", 'Opus de Griswold', 'harbinger,duriel'],
-      ["Judicant's Glaivehelm", 'Heaume-glaive du Judicant', 'urivar'],
+      [
+        "Sunbird's Gorget",
+        "Gorgerin de l'Oiseau solaire",
+        'Amulet',
+        'harbinger',
+      ],
+      ["Griswold's Opus", 'Opus de Griswold', 'Weapon', 'harbinger,duriel'],
+      [
+        "Judicant's Glaivehelm",
+        'Heaume-glaive du Judicant',
+        'Helmet',
+        'urivar',
+      ],
     ],
   },
   {
@@ -325,20 +553,31 @@ const SECTIONS = [
     theme: 'theme-paladin',
     collapsible: true,
     items: [
-      ['Herald of Zakarum', 'Héraut de Zakarum', 'harbinger'],
-      ['Argent Veil', 'Voile Argent', 'harbinger,duriel'],
-      ['Judgment of Auriel', "Jugement d'Auriel", 'harbinger'],
-      ['Bastion of Sir Matthias', 'Bastion de Sir Matthias', 'beast'],
-      ['Seal of the Second Trumpet', 'Sceau de la Deuxième Trompette', 'beast'],
-      ["Light's Rebuke", 'Réprimande de la Lumière', 'beast,urivar'],
-      ['Wreath of Auric Laurel', 'Couronne de Laurier Aurique', 'beast'],
+      ['Herald of Zakarum', 'Héraut de Zakarum', 'Helmet', 'harbinger'],
+      ['Argent Veil', 'Voile Argent', 'Chest', 'harbinger,duriel'],
+      ['Judgment of Auriel', "Jugement d'Auriel", 'Weapon', 'harbinger'],
+      ['Bastion of Sir Matthias', 'Bastion de Sir Matthias', 'Amulet', 'beast'],
+      [
+        'Seal of the Second Trumpet',
+        'Sceau de la Deuxième Trompette',
+        'Ring',
+        'beast',
+      ],
+      ["Light's Rebuke", 'Réprimande de la Lumière', 'Weapon', 'beast,urivar'],
+      [
+        'Wreath of Auric Laurel',
+        'Couronne de Laurier Aurique',
+        'Helmet',
+        'beast',
+      ],
       [
         'Sunstained War-Crozier',
         'Crosse de guerre teintée de soleil',
+        'Weapon',
         'varshan,urivar',
       ],
-      ['Gate of the Red Dawn', "Porte de l'Aube Rouge", 'duriel'],
-      ["Herald's Morningstar", 'Étoile du matin du Héraut', 'duriel'],
+      ['Gate of the Red Dawn', "Porte de l'Aube Rouge", 'Boots', 'duriel'],
+      ["Herald's Morningstar", 'Étoile du matin du Héraut', 'Weapon', 'duriel'],
     ],
   },
   {
@@ -347,12 +586,13 @@ const SECTIONS = [
     theme: 'theme-warlock',
     collapsible: true,
     items: [
-      ['The Third Blade', 'La Troisième Lame', 'harbinger'],
-      ['The Basilisk', 'Le Basilic', 'andariel,harbinger'],
-      ["Death's Pavane", 'Pavane de la Mort', 'duriel,andariel'],
+      ['The Third Blade', 'La Troisième Lame', 'Weapon', 'harbinger'],
+      ['The Basilisk', 'Le Basilic', 'Weapon', 'andariel,harbinger'],
+      ["Death's Pavane", 'Pavane de la Mort', 'Boots', 'duriel,andariel'],
       [
         'Sunstained War-Crozier',
         'Crosse de guerre teintée de soleil',
+        'Weapon',
         'varshan,urivar',
       ],
     ],
@@ -386,9 +626,10 @@ const BOSS_MAP_IDS = {
   random: '',
 };
 
-// ─── STATE ───────────────────────────────────────────────────────────────────
 let showFr = false;
 let searchQ = '';
+let selectedType = '';
+let allTypes = new Set();
 
 // ─── RENDER ──────────────────────────────────────────────────────────────────
 function buildPills(sourcesStr) {
@@ -416,7 +657,7 @@ function buildSection(sec) {
   div.className = `section theme-${sec.theme.replace('theme-', '')} ${!sec.collapsible ? '' : ''}`;
   div.id = 'sec-' + sec.id;
 
-  const badge = `<span class="section-badge" style="background:rgba(255,255,255,0.1)">${sec.items.length} objets</span>`;
+  const badge = `<span class="section-badge" style="background:rgba(255,255,255,0.1)">${sec.items.length} items</span>`;
   const mythicIcon = sec.isMythic
     ? '<span style="font-size:0.9rem;">⚡</span>'
     : '';
@@ -434,9 +675,10 @@ function buildSection(sec) {
       <table>
         <thead>
           <tr>
-            <th>Nom (EN)</th>
-            <th class="col-fr ${showFr ? 'visible' : ''}">Nom (FR)</th>
-            <th>Source de drop</th>
+            <th>Name (EN)</th>
+            <th class="col-fr ${showFr ? 'visible' : ''}">FR Names</th>
+            <th>Type</th>
+            <th>Drop Source</th>
           </tr>
         </thead>
         <tbody id="tbody-${sec.id}">
@@ -451,14 +693,18 @@ function buildSection(sec) {
 
   // Fill rows
   const tbody = document.getElementById('tbody-' + sec.id);
-  sec.items.forEach(([en, fr, sources]) => {
+  sec.items.forEach(([en, fr, type, sources]) => {
+    allTypes.add(type);
+
     const tr = document.createElement('tr');
     tr.dataset.en = en.toLowerCase();
     tr.dataset.fr = fr.toLowerCase();
+    tr.dataset.type = type.toLowerCase();
     const mythicStar = sec.isMythic ? '<span class="mythic-star">✦</span>' : '';
     tr.innerHTML = `
       <td class="name-en">${mythicStar}${en}</td>
       <td class="col-fr name-fr ${showFr ? 'visible' : ''}">${fr}</td>
+      <td class="item-type">${type}</td>
       <td><div class="source-list">${buildPills(sources)}</div></td>
     `;
     tbody.appendChild(tr);
@@ -472,7 +718,38 @@ function buildSection(sec) {
 function renderAll() {
   const container = document.getElementById('sections-container');
   container.innerHTML = '';
+  allTypes.clear();
   SECTIONS.forEach(buildSection);
+
+  // Populate type filter dropdown
+  populateTypeFilter();
+  applySearch();
+}
+
+function populateTypeFilter() {
+  const select = document.getElementById('typeFilter');
+  const currentValue = select.value;
+
+  const types = Array.from(allTypes).sort();
+
+  // Clear existing options except the first one
+  while (select.options.length > 1) {
+    select.remove(1);
+  }
+
+  // Add type options
+  types.forEach((type) => {
+    const option = document.createElement('option');
+    option.value = type.toLowerCase();
+    option.textContent = type;
+    select.appendChild(option);
+  });
+
+  select.value = currentValue;
+}
+
+function doFilter() {
+  selectedType = document.getElementById('typeFilter').value;
   applySearch();
 }
 
@@ -531,7 +808,11 @@ function applySearch() {
       total++;
       const matchEn = tr.dataset.en && tr.dataset.en.includes(searchQ);
       const matchFr = tr.dataset.fr && tr.dataset.fr.includes(searchQ);
-      const match = !searchQ || matchEn || matchFr;
+      const searchMatch = !searchQ || matchEn || matchFr;
+
+      const typeMatch = !selectedType || tr.dataset.type === selectedType;
+
+      const match = searchMatch && typeMatch;
       tr.classList.toggle('hidden', !match);
       if (match) {
         visible++;
@@ -555,11 +836,11 @@ function applySearch() {
 
   const countEl = document.getElementById('resultCount');
   const noRes = document.getElementById('noResults');
-  if (searchQ) {
-    countEl.textContent = visible + ' résultat' + (visible !== 1 ? 's' : '');
+  if (searchQ || selectedType) {
+    countEl.textContent = visible + ' result' + (visible !== 1 ? 's' : '');
     noRes.classList.toggle('visible', visible === 0);
   } else {
-    countEl.textContent = total + ' objets';
+    countEl.textContent = total + ' items';
     noRes.classList.remove('visible');
   }
 }
@@ -572,17 +853,17 @@ async function loadVersion() {
     const footerToDisplay = document.getElementById('footerToDisplay');
     if (footerToDisplay) {
       footerToDisplay.textContent =
-        'Sources : d4builds.gg · maxroll.gg · fextralife.com — Mise à jour Season 12 - Version (' +
+        'Sources: d4builds.gg · maxroll.gg · fextralife.com — Updated Season 12 - Version (' +
         data.version +
         ')';
     }
   } catch (error) {
-    console.error('Erreur lors du chargement de la version:', error);
+    console.error('Error loading version:', error);
   }
 }
 // ─── INIT ────────────────────────────────────────────────────────────────────
 renderAll();
 // Initial count
 applySearch();
-// Charger la version au démarrage
+// Load version on startup
 loadVersion();

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Diablo 4 — Objets Uniques & Mythiques</title>
+    <title>Diablo 4 — Unique & Mythic Items</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
       rel="stylesheet"
@@ -13,8 +13,8 @@
   <body>
     <div class="wrapper">
       <header class="site-header">
-        <h1>Diablo IV — Objets Uniques &amp; Mythiques</h1>
-        <p class="subtitle">Guide des sources de drop · Season 12</p>
+        <h1>Diablo IV — Unique &amp; Mythic Items</h1>
+        <p class="subtitle">Drop Source Guide · Season 12</p>
         <div class="divider">✦ ✦ ✦</div>
       </header>
 
@@ -34,21 +34,24 @@
           <input
             type="text"
             id="search"
-            placeholder="Rechercher un objet…"
+            placeholder="Search item…"
             oninput="doSearch()"
             autocomplete="off"
           />
         </div>
+        <select id="typeFilter" class="type-filter" onchange="doFilter()">
+          <option value="">All Types</option>
+        </select>
         <button class="toggle-fr" id="toggleFr" onclick="toggleFrench()">
           <span class="dot"></span>
-          Noms FR
+          FR Names
         </button>
         <span class="result-count" id="resultCount"></span>
       </div>
 
       <div id="sections-container"></div>
       <div class="no-results" id="noResults">
-        Aucun objet trouvé pour cette recherche.
+        No items found for this search.
       </div>
 
       <div class="footer" id="footer">

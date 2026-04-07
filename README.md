@@ -2,40 +2,41 @@
 
 Version 1.0.0
 
-Une application web élégante et interactive pour consulter les sources de drop de tous les objets uniques et mythiques de **Diablo IV**.
+An elegant and interactive web application to check the drop sources of all unique and mythic items in **Diablo IV**.
 
-## 🎯 Fonctionnalités
+## 🎯 Features
 
-- 📊 **Base de données complète** : Plus de 100+ objets classés par rareté et classe
-- 🔍 **Recherche en temps réel** : Trouvez rapidement les objets par nom EN/FR
-- 🗺️ **Liens vers la carte** : Cliquez sur les boss pour afficher leur localisation sur [purediablo.com/map](https://www.purediablo.com/diablo4/map/)
-- 🎭 **Filtrage par classe** : Sections dédiées à chaque classe (Barbarian, Druid, Necromancer, Rogue, Sorcerer, Spiritborn, Paladin, Warlock)
-- 📁 **Sections repliables** : Organisez votre vue selon vos besoins
-- 🌐 **Bilingue FR/EN** : Basculez facilement entre les noms français et anglais
-- ✨ **Design immersif** : Interface stylisée avec les couleurs diaboliques de Diablo IV
-- 📱 **Responsive** : Fonctionne sur tous les appareils
+- 📊 **Complete database**: Almost 200 items categorized by rarity, class and type
+- 🔍 **Real-time search**: Quickly find items by name EN/FR
+- 🗺️ **Map links**: Click on bosses to display their location on [purediablo.com/map](https://www.purediablo.com/diablo4/map/)
+- 🎭 **Class-based filtering**: Dedicated sections for each class (Barbarian, Druid, Necromancer, Rogue, Sorcerer, Spiritborn, Paladin, Warlock)
+- 📁 **Collapsible sections**: Organize your view as needed
+- 🌐 **Bilingual FR/EN**: Easily switch between French and English names
+- 🎯 **Item type filtering**: Filter items by type (Helmet, Chest, Weapon, Ring, etc.)
+- ✨ **Immersive design**: Styled interface with Diablo IV's dark colors
+- 📱 **Responsive**: Works on all devices
 
-## 🎮 Boss Supportés
+## 🎮 Supported Bosses
 
-- 🔨 **Grigoire** - Champ de Bataille
-- ❄️ **Varshan** - Enfer gelé
-- 👑 **Lord Zir** - Château de Zir
-- 🐉 **Beast in the Ice** - Domaine gelé
-- 👿 **Urivar** - Les Tourments
+- 🔨 **Grigoire** - Battlefield
+- ❄️ **Varshan** - Frozen Hell
+- 👑 **Lord Zir** - Zir's Castle
+- 🐉 **Beast in the Ice** - Frozen Domain
+- 👿 **Urivar** - The Torments
 - 💀 **Harbinger of Hatred** - Sanctum
-- 😈 **Duriel** - Fleuve du Sang
-- 🪦 **Andariel** - Catacombes
-- 🔪 **The Butcher** - Abattoir (Cimetière sanglant)
+- 😈 **Duriel** - River of Blood
+- 🪦 **Andariel** - Catacombs
+- 🔪 **The Butcher** - Slaughterhouse (Bloody Cemetery)
 
-## 📝 Données
+## 📝 Data
 
-Les données incluent :
+The data includes:
 
-- 🌟 **Objets mythiques** : Les plus rares (accessibles via Duriel, Andariel, Harbinger)
-- 🎁 **Objets uniques** : Par classe et toutes classes
-- 📍 **Sources complètes** : Chaque objet indique tous les boss qui le dropent
+- 🌟 **Mythic items**: The rarest items (accessible via Duriel, Andariel, Harbinger)
+- 🎁 **Unique items**: By class and all classes
+- 📍 **Complete sources**: Each item shows all bosses that drop it
 
-Mise à jour : **Season 12 (Avril 2026)**
+Updated: **Season 12 (April 2026)**
 
 ## 📖 Sources
 
@@ -44,19 +45,19 @@ Mise à jour : **Season 12 (Avril 2026)**
 - **fextralife.com**
 - **www.purediablo.com**
 
-## 🛡️ Compatibilité
+## 🛡️ Compatibility
 
-- ✅ Chrome/Edge (recommandé)
+- ✅ Chrome/Edge (recommended)
 - ✅ Firefox
 - ✅ Safari
-- ✅ Mobile/Tablette
+- ✅ Mobile/Tablet
 
-## 📄 Licence
+## 📄 License
 
-Libre d'utilisation pour la communauté Diablo IV.
+Free to use for the Diablo IV community.
 
 ---
 
-**Rejoignez les chercheurs de butin !** 🔍💎
+**Join the loot hunters!** 🔍💎
 
-_Dernière mise à jour : Avril 2026 - Season 12_
+_Last updated: April 2026 - Season 12 with ❤️ by SuperWaper_
