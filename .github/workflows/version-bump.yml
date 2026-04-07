@@ -26,8 +26,8 @@ jobs:
 
       - name: Bump version
         run: |
-          # Lire la version actuelle
-          CURRENT_VERSION=$(grep '"version"' version.json | grep -oP '"\K[^"]+')
+          # Lire la version actuelle avec jq
+          CURRENT_VERSION=$(jq -r '.version' version.json)
           echo "Version actuelle: $CURRENT_VERSION"
 
           # Parser la version (major.minor.patch)
@@ -45,8 +45,8 @@ jobs:
           NEW_VERSION="$MAJOR.$MINOR.$PATCH"
           echo "Nouvelle version: $NEW_VERSION"
 
-          # Mettre à jour version.json
-          sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$NEW_VERSION\"/" version.json
+          # Mettre à jour version.json avec jq
+          jq --arg v "$NEW_VERSION" '.version = $v' version.json > version.json.tmp && mv version.json.tmp version.json
 
           # Mettre à jour README.md (ligne 3)
           sed -i "3s/.*/Version $NEW_VERSION/" README.md
