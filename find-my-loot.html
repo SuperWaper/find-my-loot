@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diablo 4 — Objets Uniques & Mythiques</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="site-header">
+        <h1>Diablo IV — Objets Uniques &amp; Mythiques</h1>
+        <p class="subtitle">Guide des sources de drop · Season 12</p>
+        <div class="divider">✦ ✦ ✦</div>
+      </header>
+
+      <div class="toolbar">
+        <div class="search-wrap">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          <input
+            type="text"
+            id="search"
+            placeholder="Rechercher un objet…"
+            oninput="doSearch()"
+            autocomplete="off"
+          />
+        </div>
+        <button class="toggle-fr" id="toggleFr" onclick="toggleFrench()">
+          <span class="dot"></span>
+          Noms FR
+        </button>
+        <span class="result-count" id="resultCount"></span>
+      </div>
+
+      <div id="sections-container"></div>
+      <div class="no-results" id="noResults">
+        Aucun objet trouvé pour cette recherche.
+      </div>
+
+      <div class="footer" id="footer">
+        <span id="footerToDisplay">footer text</span>
+      </div>
+    </div>
+    <script src="find-my-loot.js"></script>
+  </body>
+</html>
