@@ -1,33 +1,11 @@
-import { dbItems } from './data/find-my-loot-db.js';
+import { dbBoss, dbItems, dbLocation } from './data/find-my-loot-db.js';
 
 const SECTIONS = dbItems;
 
-const BOSS_LABELS = {
-  grigoire: { label: 'Grigoire', cls: 'pill-grigoire' },
-  varshan: { label: 'Varshan', cls: 'pill-varshan' },
-  lordzir: { label: 'Lord Zir', cls: 'pill-lordzir' },
-  beast: { label: 'Beast in the Ice', cls: 'pill-beast' },
-  urivar: { label: 'Urivar', cls: 'pill-urivar' },
-  harbinger: { label: 'Harbinger of Hatred', cls: 'pill-harbinger' },
-  duriel: { label: 'Duriel', cls: 'pill-duriel' },
-  andariel: { label: 'Andariel', cls: 'pill-andariel' },
-  butcher: { label: 'The Butcher', cls: 'pill-butcher' },
-  random: { label: 'Random', cls: 'pill-random' },
-};
+const BOSS_LABELS = dbBoss;
 
 // Map IDs for purediablo.com/diablo4/map/
-const BOSS_MAP_IDS = {
-  grigoire: 'marker_1728386483806',
-  varshan: 'marker_1728386482525',
-  lordzir: 'marker_1728386482838',
-  beast: 'marker_1728386482534',
-  urivar: 'marker_1742076395404',
-  harbinger: 'marker_1742075954481',
-  duriel: 'marker_1728386483281',
-  andariel: 'marker_1728386482739',
-  butcher: 'marker_1728386483112',
-  random: '',
-};
+const BOSS_MAP_IDS = dbLocation;
 
 let showFr = false;
 let searchQ = '';
@@ -209,8 +187,21 @@ function applySearch() {
     let secVisible = 0;
     tbody.querySelectorAll('tr').forEach((tr) => {
       total++;
-      const matchEn = tr.dataset.en && tr.dataset.en.includes(searchQ);
-      const matchFr = tr.dataset.fr && tr.dataset.fr.includes(searchQ);
+      const matchEn =
+        tr.dataset.en &&
+        tr.dataset.en.toLowerCase().includes(searchQ.toLowerCase());
+      const matchFr =
+        tr.dataset.fr &&
+        tr.dataset.fr
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .toLowerCase()
+          .includes(
+            searchQ
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, '')
+              .toLowerCase(),
+          );
       const searchMatch = !searchQ || matchEn || matchFr;
 
       const typeMatch = !selectedType || tr.dataset.type === selectedType;

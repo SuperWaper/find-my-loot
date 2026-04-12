@@ -1259,3 +1259,29 @@ export const dbItems = [
     items: [],
   },
 ];
+
+export const dbBoss = {
+  grigoire: { label: 'Grigoire', cls: 'pill-grigoire' },
+  varshan: { label: 'Varshan', cls: 'pill-varshan' },
+  lordzir: { label: 'Lord Zir', cls: 'pill-lordzir' },
+  beast: { label: 'Beast in the Ice', cls: 'pill-beast' },
+  urivar: { label: 'Urivar', cls: 'pill-urivar' },
+  harbinger: { label: 'Harbinger of Hatred', cls: 'pill-harbinger' },
+  duriel: { label: 'Duriel', cls: 'pill-duriel' },
+  andariel: { label: 'Andariel', cls: 'pill-andariel' },
+  butcher: { label: 'The Butcher', cls: 'pill-butcher' },
+  random: { label: 'Random', cls: 'pill-random' },
+};
+
+export const dbLocation = {
+  grigoire: 'marker_1728386483806',
+  varshan: 'marker_1728386482525',
+  lordzir: 'marker_1728386482838',
+  beast: 'marker_1728386482534',
+  urivar: 'marker_1742076395404',
+  harbinger: 'marker_1742075954481',
+  duriel: 'marker_1728386483281',
+  andariel: 'marker_1728386482739',
+  butcher: 'marker_1728386483112',
+  random: '',
+};
