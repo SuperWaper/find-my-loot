@@ -1,6 +1,6 @@
 # 🔱 Find My Loot — Diablo IV Unique & Mythic Item Guide
 
-Version 1.0.3
+Version 1.0.4
 
 An elegant and interactive web application to check the drop sources of all unique and mythic items in **Diablo IV**.
 
