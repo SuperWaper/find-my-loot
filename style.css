@@ -4,7 +4,8 @@
   --bg3: #1a1215;
   --gold: #c8922a;
   --gold-light: #e8b84b;
-  --gold-dim: #7a5418;
+  --gold-dim: #a57b39;
+  --green-active: #41d848;
   --red: #8b1a1a;
   --red-light: #c0392b;
   --mythic: #7c3aed;
@@ -185,7 +186,7 @@ body::before {
   transition: background 0.2s;
 }
 .toggle-fr.active .dot {
-  background: var(--gold-light);
+  background: var(--green-active);
 }
 
 .type-filter {
