@@ -1,11 +1,11 @@
-import { dbBoss, dbItems, dbLocation } from '/data/find-my-loot-db.js';
+import * as DB from './data/find-my-loot-db.js';
 
-const SECTIONS = dbItems;
+const SECTIONS = DB.dbItems;
 
-const BOSS_LABELS = dbBoss;
+const BOSS_LABELS = DB.dbBoss;
 
 // Map IDs for purediablo.com/diablo4/map/
-const BOSS_MAP_IDS = dbLocation;
+const BOSS_MAP_IDS = DB.dbLocation;
 
 let showFr = false;
 let searchQ = '';
