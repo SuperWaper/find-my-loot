@@ -1,4 +1,4 @@
-import { dbBoss, dbItems, dbLocation } from './data/find-my-loot-db.js';
+import { dbBoss, dbItems, dbLocation } from '/data/find-my-loot-db.js';
 
 const SECTIONS = dbItems;
 
