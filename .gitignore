@@ -1,1 +1,3 @@
 ﻿*.psd
+.vercel
+.env.local
